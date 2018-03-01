@@ -28,29 +28,33 @@ var friendList = require("../data/friends.js")
 		console.log("---------------")
 		console.log(friendList)
 
-		var user1 = req.body.photo;
+		var user1 = req.body.choices;
+		var match;
 
 		console.log("-----------------")
 		console.log(user1)
 
 
-	  	// for(var i = 0; i < friendList.length; i++){
-	  	// var user2 = [friendList[i].scores];
+	  	for(var i = 0; i < friendList.length; i++){
+	  		var user2 = friendList[i].choices;
+	  		var diffTotal = 25;
+		  	function difference(user1, user2){
+		  		var diffOne = Math.abs(user1[0] - user2[0]);
+		  		var diffTwo = Math.abs(user1[1] - user2[1]);
+		  		var diffThree = Math.abs(user1[2] - user2[2]);
+		  		var diffFour = Math.abs(user1[3] - user2[3]);
+		  		var diffFive = Math.abs(user1[4] - user2[4]);
 
-		  // 	function difference(user1, user2){
-		  // 		diffOne = Math.abs(user1[0] - user2[0])
-		  // 		diffTwo = Math.abs(user1[1] - user2[1])
-		  // 		diffThree = Math.abs(user1[2] - user2[2])
-		  // 		diffFour = Math.abs(user1[3] - user2[3])
-		  // 		diffFive = Math.abs(user1[4] - user2[4])
+		  		newDiffTotal = diffOne + diffTwo + diffThree + diffFour + diffFive
 
-		  // 		diffTotal = diffOne + diffTwo + diffThree + diffFour + diffFive
+		  		if(newDiffTotal < diffTotal){
+		  			diffTotal = newDiffTotal;
+		  			match = friendsList[i];
+		  		}
+		  	}
+		  	difference(user1, user2);
 
-		  // 	}
-
-		  // 	difference(user1, user2);
-
-	  	// }
+	  	}
 
 	  
 
@@ -64,3 +68,4 @@ var friendList = require("../data/friends.js")
 
 
 module.exports = router;
+
