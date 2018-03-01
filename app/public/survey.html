@@ -175,7 +175,7 @@
           var userData = {
               name: $("#name").val(),
               photo: $("#photo").val(),
-              scores: [
+              choices:[
                 $("#q1").val(),
                 $("#q2").val(),
                 $("#q3").val(),
@@ -186,7 +186,9 @@
     
     $.post("/api/friends", userData, function(data){
       if(data){
-        alert("sucsessfully submitted")
+        console.log("sucsessfully submitted");
+      }else{
+        console.log("something isn;t right...")
       }
 
     })
