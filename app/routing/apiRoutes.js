@@ -24,20 +24,21 @@ var friendList = require("../data/friends.js")
   // ---------------------------------------------------------------------------
 	router.post("/friends", function(req, res) {
 		console.log(req.body);
-		friendList.push(req.body);
 		console.log("---------------")
 		console.log(friendList)
 
-		var user1 = req.body.choices;
+		var user1 = req.body["choices[]"];
 		var match;
 
 		console.log("-----------------")
 		console.log(user1)
+		console.log("----------------")
 
+		
 
 	  	for(var i = 0; i < friendList.length; i++){
-	  		var user2 = friendList[i].choices;
-	  		var diffTotal = 25;
+	  		var user2 = friendList[i]["choices[]"];
+	  		var diffTotal = 40;
 		  	function difference(user1, user2){
 		  		var diffOne = Math.abs(user1[0] - user2[0]);
 		  		var diffTwo = Math.abs(user1[1] - user2[1]);
@@ -49,14 +50,22 @@ var friendList = require("../data/friends.js")
 
 		  		if(newDiffTotal < diffTotal){
 		  			diffTotal = newDiffTotal;
-		  			match = friendsList[i];
+		  			match = friendList[i];
 		  		}
 		  	}
 		  	difference(user1, user2);
-
 	  	}
 
-	  
+	  	friendList.push(req.body);
+	  	console.log(diffTotal)
+	  	console.log(match);
+
+
+
+		router.post("/friends", function(req, res){
+
+
+		})
 
 
 	});

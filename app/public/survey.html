@@ -159,6 +159,28 @@
            Submit</button>
    </form>
 
+   <!-- Modal -->
+  <div id="results-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title"><strong>Best Match</strong></h2>
+        </div>
+        <div class="modal-body">
+          <h2 id="match-name"></h2>
+          <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
     <hr>
     <footer class="footer">
       <div class="container">
@@ -184,11 +206,15 @@
               ]
           };
     
+    
+    $.ajax({url: "survey.html", success: function(result){
+        $("#div1").html(result);
+    }});
     $.post("/api/friends", userData, function(data){
       if(data){
         console.log("sucsessfully submitted");
       }else{
-        console.log("something isn;t right...")
+        console.log("something isn't right...")
       }
 
     })
