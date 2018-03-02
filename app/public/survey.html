@@ -205,17 +205,11 @@
                 $("#q5").val()
               ]
           };
-    
-    
-    $.ajax({url: "survey.html", success: function(result){
-        $("#div1").html(result);
-    }});
     $.post("/api/friends", userData, function(data){
-      if(data){
-        console.log("sucsessfully submitted");
-      }else{
-        console.log("something isn't right...")
-      }
+      $("#match-name").text(data.name);
+      $("#match-img").attr("src", data.photo);
+
+      $("#results-modal").modal("toggle")
 
     })
       $("#name").val(""),
