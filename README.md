@@ -5,7 +5,7 @@ Friend Finder is a simple friend matching application meant to connect strangers
 ## Overview
 
 ### Using Friend Finder
-Upon entering the Friend Finder homepage there are three available links.  The footer contains links to this github repository and to the rendered json of the database.  The main link is to the survey where the user will be required to answer ten questions on the likert scale.  Upon its submition a modal will open with the user's matching result.
+Upon entering the Friend Finder homepage there are three available links.  The footer contains links to this github repository and to the rendered json of the database.  The main link is to the survey where the user will be required to answer ten questions on the likert scale.  Upon its submission a modal will open with the user's matching result.
 
 ***
 ### Deployment
