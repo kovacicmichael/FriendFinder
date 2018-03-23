@@ -20,8 +20,12 @@ Michael Kovacic
 ***
 
 ## Technologies Used
+##### Front End
+***
 * Javascript
 * Bootstrap
+##### Back End
+***
 * Express.js
 * NodeJS
 * Heroku
