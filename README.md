@@ -13,11 +13,11 @@ Friend Finder is currently deployed through Heroku for its users.
 
 https://murmuring-waters-69052.herokuapp.com/
 
-***
+****
 ## Contributors
 Michael Kovacic
 
-***
+****
 
 ## Technologies Used
 ##### Front End
