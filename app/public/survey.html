@@ -15,8 +15,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
   <!-- Chosen -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css"> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script> -->
+
+  <!-- <link rel="stylesheet" type="text/css" href="./css/style.css"> -->
 
 </head>
 
@@ -95,7 +97,7 @@
               </select>
 
 
-              <!-- <h3><strong>Question 6</strong></h3>
+              <h3><strong>Question 6</strong></h3>
               <h4>It is often difficult for you to relate to other people’s feelings.</h4>
               <select class="chosen-select" id="q6">
                 <option value=""></option>
@@ -149,7 +151,7 @@
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5 (Strongly Agree)</option>
-              </select> -->
+              </select>
 
           <br>
           <br>
@@ -167,11 +169,11 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title"><strong>Best Match</strong></h2>
+          <h2 class="modal-title" align="center"><strong>Best Match</strong></h2>
         </div>
         <div class="modal-body">
-          <h2 id="match-name"></h2>
-          <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+          <h2 id="match-name" align="center"></h2>
+          <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="" height="250px" width="275px" align="center">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -202,25 +204,35 @@
                 $("#q2").val(),
                 $("#q3").val(),
                 $("#q4").val(),
-                $("#q5").val()
+                $("#q5").val(),
+                $("#q6").val(),
+                $("#q7").val(),
+                $("#q8").val(),
+                $("#q9").val(),
+                $("#q10").val()
               ]
           };
-    $.post("/api/friends", userData, function(data){
-      $("#match-name").text(data.name);
-      $("#match-img").attr("src", data.photo);
+        $.post("/api/friends", userData, function(data){
+          $("#match-name").text(data.name);
+          $("#match-img").attr("src", data.photo);
 
-      $("#results-modal").modal("toggle")
+          $("#results-modal").modal("toggle")
 
-    })
-      $("#name").val(""),
-      $("#photo").val(""),
-      $("#q1").val(0),
-      $("#q2").val(0),
-      $("#q3").val(0),
-      $("#q4").val(0),
-      $("#q5").val(0)
-});
-
+        })
+          $("#name").val(""),
+          $("#photo").val(""),
+          $("#q1").val(0),
+          $("#q2").val(0),
+          $("#q3").val(0),
+          $("#q4").val(0),
+          $("#q5").val(0),
+          $("#q6").val(0),
+          $("#q7").val(0),
+          $("#q8").val(0),
+          $("#q9").val(0),
+          $("#q10").val(0)
+    });
+//end of click event
 
 
 </script>  
