@@ -25,6 +25,10 @@ Michael Kovacic
 * Express.js
 * NodeJS
 * Heroku
+* npm Packages:
+    * express 
+    * body-parser
+    * path
 
 ***
 
