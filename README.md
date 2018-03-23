@@ -24,6 +24,7 @@ Michael Kovacic
 * Bootstrap
 * Express.js
 * NodeJS
+* Heroku
 
 ***
 
